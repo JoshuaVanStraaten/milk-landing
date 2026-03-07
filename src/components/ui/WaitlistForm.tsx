@@ -254,7 +254,7 @@ export function WaitlistForm() {
 
       <CTAButton
         type="submit"
-        variant="dark"
+        variant="primary"
         size="lg"
         disabled={status === "loading"}
         className="w-full"

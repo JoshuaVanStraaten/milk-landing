@@ -9,15 +9,27 @@ interface PhoneScreen {
 interface PhoneFrameProps {
   screens: PhoneScreen[];
   activeScreenId: string;
+  glowColor?: string;
 }
 
-export function PhoneFrame({ screens, activeScreenId }: PhoneFrameProps) {
+export function PhoneFrame({ screens, activeScreenId, glowColor = "#10b981" }: PhoneFrameProps) {
+  const glowRgb = glowColor === "#f59e0b" ? "245,158,11" : "16,185,129";
+
   return (
     <div
       className="relative mx-auto"
       style={{ width: 280, height: 580 }}
       aria-hidden="true"
     >
+      {/* Glow halo behind phone */}
+      <div
+        className="absolute inset-0 rounded-[40px] phone-glow pointer-events-none"
+        style={{
+          boxShadow: `0 0 60px 20px rgba(${glowRgb}, 0.18)`,
+          zIndex: -1,
+        }}
+      />
+
       {/* Phone frame */}
       <div
         className="absolute inset-0 rounded-[40px] border-8 border-[#1f2937] bg-[#1f2937] overflow-hidden shadow-[0_25px_50px_-5px_rgba(0,0,0,0.25),0_0_0_1px_rgba(0,0,0,0.05)]"

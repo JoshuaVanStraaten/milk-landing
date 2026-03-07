@@ -7,7 +7,7 @@ export function WaitlistSection() {
       id="waitlist"
       className="relative py-24 md:py-32 overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+        background: "linear-gradient(135deg, #059669 0%, #047857 50%, #064e3b 100%)",
       }}
     >
       {/* Decorative blobs */}
@@ -34,7 +34,10 @@ export function WaitlistSection() {
         </div>
 
         {/* Form card */}
-        <div className="rounded-2xl bg-white p-6 shadow-2xl md:p-8">
+        <div
+          className="rounded-2xl bg-white p-6 md:p-8"
+          style={{ boxShadow: "0 0 60px rgba(16,185,129,0.3), 0 25px 50px -12px rgba(0,0,0,0.25)" }}
+        >
           <WaitlistForm />
         </div>
       </div>

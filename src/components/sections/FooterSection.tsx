@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function FooterSection() {
   return (
     <footer className="bg-[#111827] py-16">
@@ -6,10 +8,13 @@ export function FooterSection() {
           {/* Brand */}
           <div className="max-w-xs">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-[#10b981] flex items-center justify-center">
-                <span className="text-white font-bold text-sm">M</span>
-              </div>
-              <span className="text-white font-bold text-xl">Milk</span>
+              <Image
+                src="/images/milk_logo.png"
+                alt="Milk"
+                width={120}
+                height={40}
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-[#6b7280] text-sm leading-relaxed">
               Compare grocery prices across Pick n Pay, Woolworths, Checkers
@@ -26,7 +31,7 @@ export function FooterSection() {
               Links
             </p>
             <a
-              href="https://github.com/joshuapohan/milk-landing/blob/main/PRIVACY_POLICY.md"
+              href="https://github.com/JoshuaVanStraaten/milk-legal/blob/main/PRIVACY_POLICY.md"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#6b7280] text-sm hover:text-white transition-colors"
@@ -34,7 +39,7 @@ export function FooterSection() {
               Privacy Policy
             </a>
             <a
-              href="mailto:hello@getmilk.app"
+              href="mailto:jriconsulting.za@gmail.com"
               className="text-[#6b7280] text-sm hover:text-white transition-colors"
             >
               Contact Us
@@ -64,10 +69,16 @@ export function FooterSection() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8 text-center">
+        <div className="mt-12 border-t border-white/10 pt-8 flex flex-col items-center gap-4 md:flex-row md:justify-between">
           <p className="text-[#4b5563] text-sm">
             © {new Date().getFullYear()} Milk. Made with love in South Africa.
           </p>
+          <a
+            href="#hero"
+            className="text-[#6b7280] text-sm hover:text-white transition-colors"
+          >
+            Back to top ↑
+          </a>
         </div>
       </div>
     </footer>

@@ -13,7 +13,7 @@ export function HeroSection() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 70% at 75% 50%, rgba(16,185,129,0.10) 0%, transparent 65%)",
+            "radial-gradient(ellipse 70% 70% at 75% 50%, rgba(16,185,129,0.15) 0%, transparent 65%)",
         }}
       />
 
@@ -22,7 +22,8 @@ export function HeroSection() {
           {/* Text column */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left md:flex-1 order-2 md:order-1">
             <div className="animate-fade-slide-up" style={{ animationDelay: "0ms" }}>
-              <span className="inline-block rounded-full bg-[#d1fae5] px-4 py-1.5 text-sm font-semibold text-[#065f46] mb-6">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#d1fae5] px-4 py-1.5 text-sm font-semibold text-[#065f46] mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse-dot" />
                 Now in early access
               </span>
             </div>
@@ -33,7 +34,7 @@ export function HeroSection() {
             >
               Stop overpaying
               <br />
-              <span className="text-[#10b981]">for groceries.</span>
+              <span className="gradient-text">for groceries.</span>
             </h1>
 
             <p
@@ -49,7 +50,12 @@ export function HeroSection() {
               style={{ animationDelay: "240ms" }}
             >
               <a href="#waitlist">
-                <CTAButton size="lg">Join the Waitlist — it&apos;s free</CTAButton>
+                <CTAButton size="lg" className="shadow-lg shadow-emerald-500/25">
+                  Join the Waitlist — it&apos;s free
+                  <svg className="w-4 h-4 ml-2 inline" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </CTAButton>
               </a>
               <SignupCounter />
             </div>
@@ -57,14 +63,20 @@ export function HeroSection() {
 
           {/* Hero image */}
           <div className="relative flex-1 flex items-center justify-center order-1 md:order-2 animate-float-in">
-            <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px]">
+            <div
+              className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[440px] md:h-[440px] lg:w-[520px] lg:h-[520px]"
+              style={{
+                maskImage: "radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%)",
+                WebkitMaskImage: "radial-gradient(ellipse 85% 85% at center, black 50%, transparent 100%)",
+              }}
+            >
               <Image
                 src="/images/hero.webp"
                 alt="Milk app — grocery price comparison"
                 fill
                 priority
-                className="object-contain drop-shadow-2xl"
-                sizes="(max-width: 768px) 320px, (max-width: 1024px) 384px, 480px"
+                className="object-contain"
+                sizes="(max-width: 768px) 320px, (max-width: 1024px) 440px, 520px"
               />
             </div>
           </div>

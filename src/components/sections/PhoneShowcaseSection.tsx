@@ -11,6 +11,7 @@ const FEATURES = [
     description:
       "Hot specials from all 4 major stores, updated daily. Never miss a sale on the brands your family loves.",
     accent: "#10b981",
+    pill: "Deals",
   },
   {
     id: "feature-compare",
@@ -19,6 +20,7 @@ const FEATURES = [
     description:
       "Same product. Four stores. One screen. Know exactly who's cheapest before you add anything to your trolley.",
     accent: "#f59e0b",
+    pill: "Compare",
   },
   {
     id: "feature-recipe",
@@ -27,6 +29,7 @@ const FEATURES = [
     description:
       "Tell us what you want to cook and we'll find every ingredient at the best price across all stores.",
     accent: "#10b981",
+    pill: "AI",
   },
   {
     id: "feature-list",
@@ -35,6 +38,7 @@ const FEATURES = [
     description:
       "Tap to add items, share with your household, and check off as you go. Shopping sorted.",
     accent: "#f59e0b",
+    pill: "Lists",
   },
 ];
 
@@ -48,15 +52,17 @@ const SCREENS = FEATURES.map((f) => ({
 
 export function PhoneShowcaseSection() {
   const activeId = useScrollObserver(PANEL_IDS, 0.5);
+  const activeIndex = PANEL_IDS.indexOf(activeId);
+  const activeFeature = FEATURES[activeIndex] ?? FEATURES[0];
 
   return (
-    <section className="bg-white py-24 md:py-0">
+    <section className="relative z-10 bg-white py-24 md:py-0 overflow-hidden">
       <div className="mx-auto max-w-6xl px-5">
         {/* Section heading (visible on mobile above sticky) */}
         <div className="text-center mb-12 md:hidden">
           <h2 className="text-3xl font-bold text-[#111827]">
             Everything you need,{" "}
-            <span className="text-[#10b981]">in one app.</span>
+            <span className="gradient-text">in one app.</span>
           </h2>
         </div>
 
@@ -68,11 +74,11 @@ export function PhoneShowcaseSection() {
               <h2 className="text-4xl font-bold text-[#111827] leading-tight mb-2">
                 Everything you need,
                 <br />
-                <span className="text-[#10b981]">in one app.</span>
+                <span className="gradient-text">in one app.</span>
               </h2>
             </div>
 
-            {FEATURES.map((feature) => (
+            {FEATURES.map((feature, i) => (
               <div
                 key={feature.id}
                 id={feature.id}
@@ -94,10 +100,16 @@ export function PhoneShowcaseSection() {
                   </div>
                 </div>
 
-                <div
-                  className="w-2 h-2 rounded-full mb-6 hidden md:block"
-                  style={{ backgroundColor: feature.accent }}
-                />
+                {/* Category pill */}
+                <span
+                  className="inline-block rounded-full px-3 py-1 text-xs font-bold tracking-wider uppercase mb-4 w-fit"
+                  style={{
+                    backgroundColor: feature.accent + "20",
+                    color: feature.accent,
+                  }}
+                >
+                  {feature.pill}
+                </span>
                 <h3 className="text-2xl font-bold text-[#111827] mb-4 md:text-3xl">
                   {feature.headline}
                 </h3>
@@ -110,11 +122,29 @@ export function PhoneShowcaseSection() {
 
           {/* Sticky phone — right column on desktop */}
           <div className="hidden md:block">
+            {/* Progress dots */}
             <div
-              className="sticky top-1/2 -translate-y-1/2 flex items-center justify-center py-16"
+              className="sticky top-1/2 -translate-y-1/2 flex items-center justify-center gap-8 py-16"
               style={{ height: "100vh" }}
             >
-              <PhoneFrame screens={SCREENS} activeScreenId={activeId} />
+              {/* Dot progress — left of phone */}
+              <div className="flex flex-col gap-3">
+                {FEATURES.map((f, i) => (
+                  <div
+                    key={f.id}
+                    className="w-1.5 rounded-full transition-all duration-500"
+                    style={{
+                      height: i === activeIndex ? "2rem" : "0.375rem",
+                      backgroundColor: i === activeIndex ? activeFeature.accent : "#e5e7eb",
+                    }}
+                  />
+                ))}
+              </div>
+              <PhoneFrame
+                screens={SCREENS}
+                activeScreenId={activeId}
+                glowColor={activeFeature.accent}
+              />
             </div>
           </div>
         </div>

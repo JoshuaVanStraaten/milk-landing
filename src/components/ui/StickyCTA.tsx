@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export function StickyCTA() {
   const [visible, setVisible] = useState(false);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    // Show sticky CTA once user scrolls past the hero
     const heroEl = document.getElementById("hero");
     const waitlistEl = document.getElementById("waitlist");
 
@@ -34,7 +33,10 @@ export function StickyCTA() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-      <div className="bg-[#10b981] px-4 pt-3 pb-3 shadow-[0_-4px_24px_rgba(0,0,0,0.12)]" style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}>
+      <div
+        className="bg-[#10b981] px-4 pt-3 rounded-t-2xl shadow-[0_-4px_24px_rgba(0,0,0,0.12)]"
+        style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}
+      >
         <a
           href="#waitlist"
           className="flex h-12 w-full items-center justify-center rounded-full bg-white font-semibold text-[#059669] text-base transition-all active:scale-95"

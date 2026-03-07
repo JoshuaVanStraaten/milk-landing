@@ -88,32 +88,28 @@ export function HowItWorksSection() {
       <div className="mx-auto max-w-6xl px-5">
         <SectionReveal>
           <div className="text-center mb-16">
+            <p className="text-sm font-semibold tracking-widest text-[#10b981] uppercase mb-3">
+              How it works
+            </p>
             <h2 className="text-3xl font-bold text-[#111827] sm:text-4xl md:text-5xl">
               Up and running in{" "}
-              <span className="text-[#10b981]">60 seconds</span>
+              <span className="gradient-text">60 seconds</span>
             </h2>
             <p className="mt-4 text-[#6b7280] text-lg max-w-lg mx-auto">
-              No account setup required. No credit card. Just open the app and
-              start saving.
+              Create a free account in seconds. No credit card needed. Just start saving.
             </p>
           </div>
         </SectionReveal>
 
         <div className="relative grid gap-8 md:grid-cols-3 md:gap-6">
           {/* Connector line (desktop only) */}
-          <div
-            className="hidden md:block absolute top-16 left-[calc(16.66%+2rem)] right-[calc(16.66%+2rem)] h-px"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(to right, #10b981 0, #10b981 8px, transparent 8px, transparent 16px)",
-            }}
-          />
+          <div className="hidden md:block absolute top-8 left-[calc(16.66%)] right-[calc(16.66%)] h-0.5 bg-[#10b981]/20" />
 
           {STEPS.map((step, i) => (
             <SectionReveal key={step.number} delay={i * 120}>
-              <div className="relative flex flex-col items-center text-center md:items-start md:text-left rounded-2xl bg-white p-8 shadow-sm border border-gray-100">
-                {/* Background step number */}
-                <div className="absolute top-4 right-5 text-7xl font-bold text-[#10b981]/8 leading-none select-none">
+              <div className="relative flex flex-col items-center text-center md:items-start md:text-left rounded-2xl bg-white p-10 shadow-sm border border-gray-100">
+                {/* Step number circle sits on the connector line */}
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#10b981] text-white text-xl font-bold shadow-md shadow-emerald-500/20 z-10">
                   {step.number}
                 </div>
 
