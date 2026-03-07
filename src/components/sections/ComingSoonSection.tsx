@@ -50,19 +50,18 @@ const UPCOMING = [
 
 export function ComingSoonSection() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: "linear-gradient(180deg, #ffffff 0%, #ecfdf5 100%)" }}>
-      <div className="relative mx-auto max-w-6xl px-5">
+    <section className="bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-5">
         <SectionReveal>
           <div className="text-center mb-14">
             <p className="text-sm font-semibold tracking-widest text-[#10b981] uppercase mb-3">
-              Coming soon
+              Coming Soon
             </p>
             <h2 className="text-3xl font-bold text-[#111827] sm:text-4xl md:text-5xl">
-              Just getting started.
+              We&apos;re just getting started.
             </h2>
             <p className="mt-4 text-[#6b7280] text-lg max-w-xl mx-auto">
-              We&apos;re building more features to help you save across every
-              part of your budget — not just groceries.
+              Building more features to help you save across every part of your budget — not just groceries.
             </p>
           </div>
         </SectionReveal>
@@ -70,14 +69,12 @@ export function ComingSoonSection() {
         <div className="grid gap-5 sm:grid-cols-2 md:gap-6">
           {UPCOMING.map((feature, i) => (
             <SectionReveal key={feature.title} delay={i * 100}>
-              <div className="relative rounded-2xl border border-[#d1fae5] bg-white p-7 shadow-sm hover:shadow-md transition-shadow" style={{ borderLeft: "4px solid #10b981" }}>
-                {/* Coming soon badge */}
+              <div className="relative rounded-2xl border border-gray-100 bg-white p-7 shadow-sm hover:shadow-md transition-shadow">
                 <div className="absolute top-5 right-5">
                   <span className="inline-flex items-center rounded-full bg-[#d1fae5] px-3 py-1 text-xs font-semibold text-[#065f46]">
                     Coming soon
                   </span>
                 </div>
-
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#d1fae5] text-[#059669] mb-4">
                   {feature.icon}
                 </div>
