@@ -76,7 +76,7 @@ export function HowMilkWorks() {
         </SectionReveal>
 
         {/* Desktop: 3-col grid with phone center */}
-        <div className="hidden md:grid grid-cols-[1fr_300px_1fr] gap-8 items-center">
+        <div className="hidden md:grid grid-cols-[1fr_360px_1fr] gap-8 items-center">
           {/* Left features */}
           <div className="flex flex-col gap-12">
             {leftFeatures.map((feature, i) => (
