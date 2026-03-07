@@ -1,0 +1,12 @@
+# ENV
+.env*
+
+# Dependencies
+node_modules
+
+# Next.js build output
+.next/
+out/
+
+# Claude Code
+.claude/
