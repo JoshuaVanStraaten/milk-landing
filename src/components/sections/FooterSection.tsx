@@ -14,9 +14,9 @@ export function FooterSection() {
               <Image
                 src="/images/milk_logo.png"
                 alt="Milk"
-                width={100}
+                width={36}
                 height={36}
-                className="h-8 w-auto object-contain"
+                className="h-9 w-9 object-contain rounded-xl"
               />
             </div>
             <p className="text-[#6b7280] text-sm leading-relaxed max-w-[200px]">

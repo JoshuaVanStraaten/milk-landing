@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 const RETAILERS = [
-  { name: "Pick n Pay", logo: "/images/pnp_logo.png", darkBg: false },
-  { name: "Woolworths", logo: "/images/woolworths_logo.png", darkBg: true },
-  { name: "Checkers", logo: "/images/checkers_logo.png", darkBg: false },
-  { name: "Shoprite", logo: "/images/shoprite_logo.jpeg", darkBg: false },
+  { name: "Pick n Pay", logo: "/images/pnp_logo.png" },
+  { name: "Woolworths", logo: "/images/woolworths_logo.png" },
+  { name: "Checkers", logo: "/images/Checkers_idMlNIQk9h_0.png" },
+  { name: "Shoprite", logo: "/images/shoprite_logo.jpg" },
 ];
 
 export function RetailerStrip() {
@@ -18,15 +18,13 @@ export function RetailerStrip() {
           {RETAILERS.map((retailer) => (
             <div
               key={retailer.name}
-              className={`flex items-center justify-center rounded-xl overflow-hidden ${
-                retailer.darkBg ? "bg-[#006341] px-4 py-2" : ""
-              }`}
+              className="flex items-center justify-center"
             >
               <Image
                 src={retailer.logo}
                 alt={retailer.name}
-                width={120}
-                height={48}
+                width={240}
+                height={96}
                 className="h-10 w-auto object-contain"
               />
             </div>
