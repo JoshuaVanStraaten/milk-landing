@@ -68,7 +68,7 @@ function PhoneMockup({ src, alt }: { src: string; alt: string }) {
   return (
     <div
       className="relative rounded-[36px] border-8 border-[#1f2937] overflow-hidden shadow-2xl bg-[#1f2937]"
-      style={{ width: 220, height: 455 }}
+      style={{ width: 260, height: 538 }}
     >
       <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-[#1f2937] rounded-full z-10" />
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -138,7 +138,7 @@ export function FeatureDeepDive() {
                     background: "radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%)",
                   }}
                 />
-                <PhoneMockup src="/screenshots/recipe_light.webp" alt="AI recipe ideas" />
+                <PhoneMockup src="/screenshots/list_light.webp" alt="Smart shopping list" />
               </div>
             </div>
           </div>

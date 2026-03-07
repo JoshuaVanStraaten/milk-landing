@@ -34,15 +34,16 @@ export function Header() {
       <div className="mx-auto max-w-6xl px-5">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="#hero" className="flex-shrink-0">
+          <a href="#hero" className="flex-shrink-0 flex items-center gap-2.5">
             <Image
               src="/images/milk_logo.png"
               alt="Milk"
-              width={100}
+              width={36}
               height={36}
-              className="h-8 w-auto object-contain"
+              className="h-9 w-9 object-contain rounded-xl"
               priority
             />
+            <span className="text-lg font-bold text-[#111827] tracking-tight">Milk</span>
           </a>
 
           {/* Desktop nav */}

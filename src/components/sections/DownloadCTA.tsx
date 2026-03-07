@@ -74,7 +74,7 @@ export function DownloadCTA() {
             </a>
 
             <div className="mt-5 text-white font-medium text-base">
-              <SignupCounter />
+              <SignupCounter variant="light" />
             </div>
           </div>
 

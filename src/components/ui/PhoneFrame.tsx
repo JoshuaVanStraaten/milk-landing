@@ -18,7 +18,7 @@ export function PhoneFrame({ screens, activeScreenId, glowColor = "#10b981" }: P
   return (
     <div
       className="relative mx-auto"
-      style={{ width: 280, height: 580 }}
+      style={{ width: 300, height: 622 }}
       aria-hidden="true"
     >
       {/* Glow halo behind phone */}
@@ -52,7 +52,7 @@ export function PhoneFrame({ screens, activeScreenId, glowColor = "#10b981" }: P
               alt={screen.alt}
               fill
               className="object-cover object-top"
-              sizes="280px"
+              sizes="300px"
               priority={i === 0}
               loading={i === 0 ? "eager" : "lazy"}
             />
