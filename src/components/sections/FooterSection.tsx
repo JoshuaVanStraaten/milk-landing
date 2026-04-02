@@ -66,12 +66,16 @@ export function FooterSection() {
                 Contact Us
               </a>
               <a
-                href="https://github.com/JoshuaVanStraaten/milk-legal/blob/main/PRIVACY_POLICY.md"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/privacy"
                 className="text-[#6b7280] text-sm hover:text-white transition-colors"
               >
                 Privacy Policy
+              </a>
+              <a
+                href="/terms"
+                className="text-[#6b7280] text-sm hover:text-white transition-colors"
+              >
+                Terms of Service
               </a>
               <a href="#faq" className="text-[#6b7280] text-sm hover:text-white transition-colors">
                 FAQ
