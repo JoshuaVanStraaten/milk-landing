@@ -33,9 +33,9 @@ export function HeroSection() {
               className="text-4xl font-bold leading-[1.1] tracking-tight text-[#111827] sm:text-5xl md:text-6xl lg:text-7xl animate-fade-slide-up"
               style={{ animationDelay: "80ms" }}
             >
-              Save on every
+              Milk helps you
               <br />
-              <span className="gradient-text">grocery shop.</span>
+              <span className="gradient-text">save on groceries.</span>
             </h1>
 
             {/* Subtitle */}
